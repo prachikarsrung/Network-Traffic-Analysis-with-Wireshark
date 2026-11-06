@@ -63,7 +63,7 @@ Hands-on packet analysis of my own network traffic using **Wireshark**. I captur
 
 **HTTP (readable):**
 
-![HTTP requests and responses](https://github.com/prachikarsrung/Network-Traffic-Analysis-with-Wireshark/blob/main/http-cleartext.png)
+![HTTP requests and responses]()
 
 - The `http` filter showed **6 of 4,297 packets (0.1%)**: a `GET /online`, a `301 Moved Permanently` redirect, a second `GET /online/`, a `200 OK` response, and a `favicon.ico` request and response.
 - The request details are plain text, including the `Host`, `Referer`, `User-Agent`, and `Accept` headers, and the same text appears in the raw packet bytes.
@@ -77,7 +77,7 @@ Hands-on packet analysis of my own network traffic using **Wireshark**. I captur
 - Expanding the packet to *Extension: server_name* shows `name=en.wikipedia.org` in clear text. This is the **Server Name Indication (SNI)**, sent before encryption starts so the server knows which certificate to present.
 - Some connections appear as **QUIC** (HTTP/3) rather than TCP-based TLS.
 
-![Encrypted application data](screenshots/https-encrypted.png)
+![Encrypted application data](https://github.com/prachikarsrung/Network-Traffic-Analysis-with-Wireshark/blob/main/https-encrypted.png)
 
 - Filtering with `tls` and opening an **Application Data** packet shows *Encrypted Application Data*, and the raw bytes are unreadable. Wireshark labels the inner protocol as HTTP, but the actual requests, URLs, headers, and page content cannot be read without the session keys.
 - For the Wikipedia connections the handshake after the Server Hello (Change Cipher Spec and Application Data) is also encrypted.
