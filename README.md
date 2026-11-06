@@ -115,17 +115,3 @@ Hands-on packet analysis of my own network traffic using **Wireshark**. I captur
 
 ---
 
-## Repository structure
-
-```
-wireshark-lab/
-├── README.md
-└── screenshots/
-    ├── dns-filter.png
-    ├── http-packet-detail.png
-    ├── tcp-analysis.png
-    ├── http-cleartext.png
-    ├── tls-client-hello-list.png
-    ├── https-sni.png
-    └── https-encrypted.png
-```
