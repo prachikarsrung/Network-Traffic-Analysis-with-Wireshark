@@ -63,8 +63,6 @@ Hands-on packet analysis of my own network traffic using **Wireshark**. I captur
 
 **HTTP (readable):**
 
-![HTTP requests and responses]()
-
 - The `http` filter showed **6 of 4,297 packets (0.1%)**: a `GET /online`, a `301 Moved Permanently` redirect, a second `GET /online/`, a `200 OK` response, and a `favicon.ico` request and response.
 - The request details are plain text, including the `Host`, `Referer`, `User-Agent`, and `Accept` headers, and the same text appears in the raw packet bytes.
 
