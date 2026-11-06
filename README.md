@@ -84,7 +84,7 @@ Hands-on packet analysis of my own network traffic using **Wireshark**. I captur
 
 ### 4. TCP three-way handshake (`tcp.flags.syn == 1` filter)
 
-[TCP three-way handshake capture](https://github.com/prachikarsrung/Network-Traffic-Analysis-with-Wireshark/blob/main/screenshots/tcp-handshake.png) ([image](https://github.com/prachikarsrung/Network-Traffic-Analysis-with-Wireshark/raw/main/screenshots/tcp-handshake.png))
+[TCP three-way handshake capture](https://github.com/prachikarsrung/Network-Traffic-Analysis-with-Wireshark/blob/main/Tcp-threeway.png) ([image](https://github.com/prachikarsrung/Network-Traffic-Analysis-with-Wireshark/raw/main/screenshots/tcp-handshake.png))
 
 - Started a fresh Wireshark capture on my Wi-Fi interface and opened a new HTTP connection to `neverssl.com`.
 - Applied the display filter `tcp.flags.syn == 1` to identify TCP SYN and SYN-ACK packets.
