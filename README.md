@@ -52,7 +52,7 @@ Hands-on packet analysis of my own network traffic using **Wireshark**. I captur
 
 ### 3. TCP analysis (`tcp` filter)
 
-![TCP packet detail](screenshots/tcp-analysis.png)
+![TCP packet detail](https://github.com/prachikarsrung/Network-Traffic-Analysis-with-Wireshark/blob/main/Tcp-threeway.png)
 
 - The `tcp` filter displayed **6,543 of 9,642 packets (67.9%)**, showing that TCP carried most of the traffic in this capture.
 - In the packet detail pane I reviewed the TCP header fields: source and destination ports (`64889` to `443`), sequence and acknowledgment numbers, segment length, and flags.
@@ -82,19 +82,6 @@ Hands-on packet analysis of my own network traffic using **Wireshark**. I captur
 - Filtering with `tls` and opening an **Application Data** packet shows *Encrypted Application Data*, and the raw bytes are unreadable. Wireshark labels the inner protocol as HTTP, but the actual requests, URLs, headers, and page content cannot be read without the session keys.
 - For the Wikipedia connections the handshake after the Server Hello (Change Cipher Spec and Application Data) is also encrypted.
 
-### 4. TCP three-way handshake (`tcp.flags.syn == 1` filter)
-
-[TCP three-way handshake capture](https://github.com/prachikarsrung/Network-Traffic-Analysis-with-Wireshark/blob/main/Tcp-threeway.png)
-- Started a fresh Wireshark capture on my Wi-Fi interface and opened a new HTTP connection to `neverssl.com`.
-- Applied the display filter `tcp.flags.syn == 1` to identify TCP SYN and SYN-ACK packets.
-- Selected a TCP conversation to isolate the connection and examined the three packets involved in establishing it.
-- Observed the three stages of the TCP handshake:
-  1. **SYN:** My device sent a connection request to the server.
-  2. **SYN-ACK:** The server acknowledged the request and sent its own SYN.
-  3. **ACK:** My device acknowledged the server's response, completing the connection.
-- Examined the sequence and acknowledgment numbers to understand how both devices synchronize their communication.
-
-**Security takeaway:** The TCP three-way handshake establishes a reliable connection between a client and server. Analysing SYN, SYN-ACK, and ACK flags helps understand connection establishment and identify unusual patterns such as repeated SYN requests or incomplete handshakes.
 
 **Conclusion:** HTTPS hides the page content, URL path, and headers, but an observer can still see **which server** I connected to (through DNS lookups and the SNI), the destination IP address, and the timing and size of the traffic. HTTPS protects content, not the fact that a connection happened.
 
