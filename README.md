@@ -33,7 +33,7 @@ Hands-on packet analysis of my own network traffic using **Wireshark**. I captur
 
 ### 1. DNS analysis (`dns` filter)
 
-![DNS capture](screenshots/dns-filter.png)
+![DNS capture](https://github.com/prachikarsrung/Network-Traffic-Analysis-with-Wireshark/blob/main/dns.png)
 
 - Applying the `dns` filter reduced the capture to **16 of 355 packets (4.5%)**, which makes the DNS exchange easy to read.
 - My device (`192.168.0.113`) sent standard queries over **UDP port 53** to the home router (`192.168.0.1`), which acts as the DNS resolver.
