@@ -43,7 +43,7 @@ Hands-on packet analysis of my own network traffic using **Wireshark**. I captur
 
 ### 2. HTTP cleartext analysis (`http` filter)
 
-![HTTP packet detail](screenshots/http-packet-detail.png)
+![HTTP packet detail](https://github.com/prachikarsrung/Network-Traffic-Analysis-with-Wireshark/blob/main/http-cleartext.png)
 
 - I browsed to a plain-HTTP test site (`neverssl.com`) and filtered with `http`, which showed the request (frame 6713) and its response (frame 6717).
 - The packet details expose the full request in readable text: the `GET` request line, `Host`, `User-Agent`, `Accept`, and `Accept-Language` headers. The raw packet bytes show the same text in the hex/ASCII view.
