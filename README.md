@@ -71,7 +71,7 @@ Hands-on packet analysis of my own network traffic using **Wireshark**. I captur
 **HTTPS (domain visible, content hidden):**
 
 ![TLS Client Hello packets](screenshots/tls-client-hello-list.png)
-![Server name visible in Client Hello](screenshots/https-sni.png)
+![Server name visible in Client Hello](https://github.com/prachikarsrung/Network-Traffic-Analysis-with-Wireshark/blob/main/https-sni.png)
 
 - Filtering with `tls.handshake.type == 1` isolated the **Client Hello** messages (**33 of 4,297 packets**). The Info column already shows the destination names, such as `www.wikipedia.org`, `upload.wikimedia.org`, `en.wikipedia.org`, and `play.google.com`.
 - Expanding the packet to *Extension: server_name* shows `name=en.wikipedia.org` in clear text. This is the **Server Name Indication (SNI)**, sent before encryption starts so the server knows which certificate to present.
